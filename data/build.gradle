@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 27
+
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def dependency = rootProject.ext.dependencies
+    api dependency.gson
+    implementation dependency.javaxInject
+    api dependency.retrofit
+    api dependency.room
+    annotationProcessor dependency.roomCompiler
+    api dependency.roomtoRX
+    api dependency.okhttp
+    api dependency.okHttpLogging
+
+    api project(path: ':domain')
+}

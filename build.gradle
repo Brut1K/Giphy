@@ -1,0 +1,82 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+
+}
+
+ext {
+    compileSdkVersion = 27
+    buildToolsSdkVersion = "27.0.2"
+    minSdkVersion = 18
+    targetSdkVersion = 27
+    rxJavaVersion = '2.1.10'
+    androidBindingVersion ='3.0.0'
+    archComponents = '1.0.0'
+    daggerVersion = '2.15'
+    javaInjectVersion ='1'
+    retrofitVersion = '2.4.0'
+    okHttpVersion = '3.10.0'
+    roomVersion = '1.0.0'
+
+
+
+    dependencies = [
+            supportAppcompat : "com.android.support:appcompat-v7:$buildToolsSdkVersion",
+            supportV4 : "com.android.support:support-v4:$buildToolsSdkVersion",
+            supportDesign : "com.android.support:design:$buildToolsSdkVersion",
+            androidBindingCompiler: "com.android.databinding:compiler:$androidBindingVersion",
+
+            archComponentsExtensions:"android.arch.lifecycle:extensions:$archComponents",
+            archComponentsCompiler:  "android.arch.lifecycle:compiler:$archComponents",
+            rxandroid : "io.reactivex.rxjava2:rxandroid:2.0.2",
+            rxjava :  "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            dagger: "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler:  "com.google.dagger:dagger-compiler:$daggerVersion",
+            javaxInject: "javax.inject:javax.inject:${javaInjectVersion}",
+
+
+
+            room : "android.arch.persistence.room:runtime:$roomVersion" ,
+            roomCompiler : "android.arch.persistence.room:compiler:$roomVersion" ,
+
+            roomtoRX: "android.arch.persistence.room:rxjava2:$roomVersion",
+
+            retrofit: "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitRxAdapter :"com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            okhttp: "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            okHttpLogging: "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            jUnit :  "junit:junit:4.12",
+            glide : "com.github.bumptech.glide:glide:4.6.1",
+            glidecompiler : "com.github.bumptech.glide:compiler:4.6.1",
+            leakcanary : "com.squareup.leakcanary:leakcanary-android:1.5.4",
+
+            gson : "com.google.code.gson:gson:2.8.2"
+
+
+    ]
+
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
