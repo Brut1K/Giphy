@@ -1,10 +1,7 @@
 package com.example.nikul.gifsearchapplication.injection;
 
 
-import com.example.data.net.RestApi;
-import com.example.data.net.RestService;
-import com.example.domain.interactors.TrendsUseCase;
-import com.example.nikul.gifsearchapplication.presentation.screens.DataViewModel;
+import com.example.nikul.gifsearchapplication.presentation.screens.main.DataViewModel;
 
 
 import javax.inject.Singleton;

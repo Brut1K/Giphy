@@ -11,5 +11,6 @@ import io.reactivex.Observable;
 public interface DataRepository {
 
     Observable<List<DataEntity>> loadTrends();
+    Observable<List<DataEntity>> search(String keys);
 
 }

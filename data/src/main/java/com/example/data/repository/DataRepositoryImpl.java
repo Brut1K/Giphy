@@ -48,5 +48,24 @@ public class DataRepositoryImpl implements DataRepository {
                 });
     }
 
+    @Override
+    public Observable<List<DataEntity>> search(String keys) {
+        Log.e("DataRepositoryImpl","searchTrends");
+        return restService.search(keys)
+                .map(new Function<Root, List<DataEntity>>() {
+                    @Override
+                    public List<DataEntity> apply(Root root) throws Exception {
+                        List<Data> data = root.getDataList();
+                        List<DataEntity> dataEntities = new ArrayList<>();
+                        for (Data d : data) {
+                            Log.e(LOG, d.getId());
+                            Log.e(LOG, d.getImages().getOriginal().getUrl());
+                            dataEntities.add(new DataEntity(d.getId(), d.getImages().getOriginal().getUrl()));
+                        }
+                        return dataEntities;
+                    }
+                });
+    }
+
 
 }

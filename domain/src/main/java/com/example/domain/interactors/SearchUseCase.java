@@ -22,9 +22,9 @@ public class SearchUseCase extends BaseUseCase {
         this.dataRepository = dataRepository;
     }
 
-//    public Observable<List<DataEntity>> search(String keys){
-//        return dataRepository.search(keys)
-//                .subscribeOn(threadExecution)
-//                .observeOn(postExecutionThread);
-//    }
+    public Observable<List<DataEntity>> search(String keys){
+        return dataRepository.search(keys)
+                .subscribeOn(threadExecution)
+                .observeOn(postExecutionThread);
+    }
 }
